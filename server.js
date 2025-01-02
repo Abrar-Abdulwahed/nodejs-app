@@ -4,7 +4,7 @@ const express = require('express')
 const cors = require('cors');
 const corsOptions = require('@/config/corsOptions')
 const bodyParser = require('body-parser')
-const router = require('@/routes/root')
+const projectRouter = require('@/routes/project')
 const sequelize = require('@/config/db');
 const errorHandler = require('@/middlewares/errorHandler');
 
@@ -13,7 +13,7 @@ app.use(cors(corsOptions))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use('/api/v1', router)
+app.use('/api/v1', projectRouter)
 app.use(errorHandler)
 sequelize.authenticate()
   .then(() => console.log('Database connected successfully'))

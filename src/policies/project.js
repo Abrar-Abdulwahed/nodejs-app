@@ -1,0 +1,2 @@
+exports.canViewProject = (user, project) => {return user.role === 'superadmin'}
+exports.canUpdateProject = (user, project) => {return user.role === 'superadmin' || user.role === 'manager' && project.department === user.department === 'IT'}
