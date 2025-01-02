@@ -39,6 +39,7 @@ jspm_packages/
 # dotenv environment variable files (sensitive)
 /src/.env.development
 /src/public
+.env
 # .env.production
 # .env.development
 # .env.staging

@@ -1,24 +1,38 @@
 {
-  "name": "nodejs-app-demo",
+  "name": "tanfeeth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "dev": "nodemon src/server.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "status": "npx sequelize-cli db:migrate:status",
+    "down": "npx sequelize-cli db:migrate:undo",
+    "down-all": "npx sequelize-cli db:migrate:undo:all",
+    "seed-all": "npx sequelize-cli db:seed:all",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@prisma/client": "^6.1.0",
+    "axios": "^1.7.9",
     "body-parser": "^1.20.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "memorystorage": "^0.12.0",
     "module-alias": "^2.2.3",
     "pg": "^8.13.1",
-    "prisma": "^6.1.0"
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.5",
+    "sequential-ids": "^0.0.0"
   },
   "_moduleAliases": {
     "@": "./src"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "sequelize-cli": "^6.6.2"
   }
 }
